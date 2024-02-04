@@ -1,0 +1,53 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #8ba888;
+  font-family: "Rubik", sans-serif;
+  color: #000000;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+  margin: 30px auto;
+}
+
+.logo {
+    display: block;
+    margin: auto;
+    width: 50%;
+    height: auto;
+}
+
+input {
+  background-color: #fdfdfd;
+  padding: 15px;
+  border: 0;
+  border-radius: 8px;
+  font-size: 20px;
+  color: #070707;
+  text-align: center;
+  margin: 10px 0;
+  font-family: "Rubik", sans-serif;
+}
+
+button {
+  background-color: papayawhip;
+  padding: 15px;
+  border: 0;
+  border-radius: 8px;
+  font-size: xx-large;
+  text-align: center;
+  color: #0b0500;
+  font-family: "Rubik", sans-serif;
+}
+
+button:hover {
+  background-color: #268f09;
+  cursor: pointer;
+}
+button2 {
+  margin: 10px 0;
+}

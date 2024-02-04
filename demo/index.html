@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta name="google-signin-client_id" content="895994827694-3tspmod2pqfl0rudeiocplkk4fa2c0sr.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <title>FoodForesight</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML + CSS</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+        function handleFileUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const contents = e.target.result;
+                    // each ingredient must be on like a new line
+                    const foods = contents.split('\n').map(line => line.trim()).filter(Boolean);
+                    console.log(foods);
+                    // this is like the outputed list or array idk what its called
+
+
+                    globalFoods = foods;
+                };
+                reader.readAsText(file);
+            }
+        }
+    </script>
+    </head>
+    <body>
+        <div class="g-signin2" data-onsuccess ="onSignIn"></div>
+        <div id="content"></div>
+        <div class="log">
+            <img class="logo" src="freshforesightlogo.webp" alt="description of image">
+        <div class="container">
+            <form method="post" enctype="multipart/form-data">
+            <input id="file" name="file" type="file">
+        <br><br>
+        <button>Upload</button>
+      </form>
+
+
+  </body>
+
+  <script>
+    function onSignIn(googleUser){
+        console.log('User is'+ JSON.stringify(googleUser.getBasicProfile()))
+
+        document.querySelector('#content').innerText = googleUser.getBasicProfile
+    }
+  </script>
+
+
+</html>
